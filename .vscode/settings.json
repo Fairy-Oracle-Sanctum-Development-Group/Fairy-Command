@@ -1,0 +1,13 @@
+{
+    "BC-MC.Completion.Lang.Comments": true,
+    "BC-MC.Completion.Lang.Dynamic": true,
+    "BC-MC.Completion.JSON": true,
+    "BC-MC.Diagnostics.Enable": true,
+    "BC-MC.Diagnostics.Json": true,
+    "BC-MC.Diagnostics.Lang": true,
+    "BC-MC.Diagnostics.Mcfunctions": true,
+    "BC-MC.Diagnostics.Objectives": false,
+    "BC-MC.Diagnostics.Tags": true,
+    "BC-MC.Plugin.CodeLens": true,
+    "BC-MC.Education.Enable": true
+}

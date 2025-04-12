@@ -1,0 +1,33 @@
+scoreboard players set @s[scores={pn_h=10}] pn_h 0
+scoreboard players set @s[scores={pn_h=20}] pn_h 0
+scoreboard players set @s[scores={pn_h=30}] pn_h 2
+scoreboard players set @s[scores={pn_h=40}] pn_h 5
+scoreboard players set @s[scores={pn_h=50}] pn_h 9
+scoreboard players set @s[scores={pn_h=60}] pn_h 15
+scoreboard players set @s[scores={pn_h=70}] pn_h 23
+scoreboard players set @s[scores={pn_h=80}] pn_h 33
+scoreboard players set @s[scores={pn_h=90}] pn_h 44
+scoreboard players set @s[scores={pn_h=100}] pn_h 57
+scoreboard players set @s[scores={pn_h=110}] pn_h 72
+scoreboard players set @s[scores={pn_h=120}] pn_h 88
+scoreboard players set @s[scores={pn_h=130}] pn_h 105
+scoreboard players set @s[scores={pn_h=140}] pn_h 122
+scoreboard players set @s[scores={pn_h=150}] pn_h 141
+scoreboard players set @s[scores={pn_h=160}] pn_h 160
+scoreboard players set @s[scores={pn_h=170}] pn_h 178
+scoreboard players set @s[scores={pn_h=180}] pn_h 197
+scoreboard players set @s[scores={pn_h=190}] pn_h 214
+scoreboard players set @s[scores={pn_h=200}] pn_h 231
+scoreboard players set @s[scores={pn_h=210}] pn_h 247
+scoreboard players set @s[scores={pn_h=220}] pn_h 262
+scoreboard players set @s[scores={pn_h=230}] pn_h 275
+scoreboard players set @s[scores={pn_h=240}] pn_h 286
+scoreboard players set @s[scores={pn_h=250}] pn_h 296
+scoreboard players set @s[scores={pn_h=260}] pn_h 304
+scoreboard players set @s[scores={pn_h=270}] pn_h 310
+scoreboard players set @s[scores={pn_h=280}] pn_h 314
+scoreboard players set @s[scores={pn_h=290}] pn_h 317
+scoreboard players set @s[scores={pn_h=300}] pn_h 319
+scoreboard players set @s[scores={pn_h=310}] pn_h 319
+
+#By Baby_2016

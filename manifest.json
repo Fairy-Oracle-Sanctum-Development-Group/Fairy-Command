@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "§bBy Baby_2016",
+    "name": "Fairy Command",
+    "uuid": "7210d0d8-4fea-4e3b-a285-09b0f80ff7f2",
+    "min_engine_version": [
+      1,
+      21,
+      0
+    ],
+    "version": [
+      0,
+      0,
+      1
+    ]
+  },
+  "modules": [
+    {
+      "description": "Fairy Command",
+      "type": "data",
+      "uuid": "51e16c51-65b2-4505-b80a-de6a64017c5a",
+      "version": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}
