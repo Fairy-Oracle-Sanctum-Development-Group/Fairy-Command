@@ -1,2 +1,2 @@
 [English](./README_EN.md) | [中文](./README.md)
-# Fairy Command - 仙令 ✨
+# Fairy Command ✨
