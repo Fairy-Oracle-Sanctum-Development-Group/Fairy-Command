@@ -112,7 +112,7 @@ execute as @e[name=qr_main,scores={qr_prg=105}] run scoreboard players set @s qr
 execute as @e[name=qr_main,scores={qr_prg=106}] if entity @e[name=qr_split,scores={qr_code=..0}] as @e[name=qr_decode] run scoreboard players operation @s qr_split = @s GF_2
 execute as @e[name=qr_main,scores={qr_prg=106}] if entity @e[name=qr_split,scores={qr_code=..0}] run tellraw @a { "rawtext": [ { "text": "数据码分割完毕\n开始分块计算纠错码,生成多项式已备份"}]}
 execute as @e[name=qr_main,scores={qr_prg=106}] if entity @e[name=qr_split,scores={qr_code=..0}] run scoreboard players set @e[name=qr_main] qr_prg 108
-execute as @e[name=qr_main,scores={qr_prg=106}] as @e[name=qr_split,scores={qr_code=1..}] run function QR/split_config
+execute as @e[name=qr_main,scores={qr_prg=106}] as @e[name=qr_split,scores={qr_code=1..}] run function QR/config/config_split
 execute as @e[name=qr_main,scores={qr_prg=106}] run tellraw @a { "rawtext": [ { "text": "剩余待分割块数: "},{ "score": {"name": "@e[name=qr_split]", "objective": "qr_code" } }]} 
 execute as @e[name=qr_main,scores={qr_prg=106}] as @e[name=qr_split,scores={qr_code=1..}] run scoreboard players set @s qr_encode 0
 execute as @e[name=qr_main,scores={qr_prg=106}] as @e[name=qr_split,scores={qr_code=1..}] run scoreboard players add @s qr_code -1

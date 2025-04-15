@@ -53,18 +53,7 @@ execute as @e[name=qr_decode_place] at @s run tp @s ~8~~
 execute as @e[name=qr_decode_place] at @s run summon minecraft:armor_stand qr_decode ~~-0.5~
 
 #生成多项式
-execute if score mode qr_uid matches 1 run function QR/generator_7
-execute if score mode qr_uid matches 2 run function QR/generator_10
-execute if score mode qr_uid matches 3 run function QR/generator_15
-execute if score mode qr_uid matches 4 run function QR/generator_20
-execute if score mode qr_uid matches 5 run function QR/generator_26
-execute if score mode qr_uid matches 6 run function QR/generator_18
-execute if score mode qr_uid matches 7 run function QR/generator_20
-execute if score mode qr_uid matches 8 run function QR/generator_24
-execute if score mode qr_uid matches 9 run function QR/generator_30
-execute if score mode qr_uid matches 10 run function QR/generator_18
-execute if score mode qr_uid matches 11 run function QR/generator_20
-execute if score mode qr_uid matches 12 run function QR/generator_24
+function QR/config/config_generator
 
 #分配生成多项式实体分数
 execute unless entity @e[scores={qr_decode_uid=0..}] run scoreboard players set uid qr_decode_uid 0
@@ -116,12 +105,12 @@ execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_de
 #
 execute as @e[name=qr_main,scores={qr_prg=8}] run kill @e[name=qr_sup]
 execute as @e[name=qr_main,scores={qr_prg=8}] run fill ~1~~ ~64~~ minecraft:white_concrete [] replace minecraft:air []
-function QR/fill_config
+function QR/config/config_fill
 
 #
 execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode] at @s run function QR/decode
 execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=-1}] run scoreboard players operation @s GF_2 = @s qr_decode
-execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=-1}] run function QR/GF_2
+execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=-1}] run function QR/GF/GF_2
 execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] run scoreboard players operation @s GF_2 += @e[name=qr_decode,scores={qr_decode_uid=-1}] GF_1
 execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=0..,GF_2=255..}] run scoreboard players operation @s GF_2 %= "255" NUM
 #execute as @e[name=qr_main,scores={qr_prg=8}] run tellraw @a { "rawtext": [ { "score": {"name": "@e[name=qr_decode,scores={qr_decode_uid=1}]", "objective": "GF_2" } },{ "text": "," },{ "score": {"name": "@e[name=qr_decode,scores={qr_decode_uid=2}]", "objective": "GF_2" } }] }
@@ -129,7 +118,7 @@ scoreboard players set @e[name=qr_main,scores={qr_prg=8}] qr_prg 9
 
 #
 execute as @e[name=qr_main,scores={qr_prg=9}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] run scoreboard players operation @s GF_1 = @s GF_2
-execute as @e[name=qr_main,scores={qr_prg=9}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] run function QR/GF_1
+execute as @e[name=qr_main,scores={qr_prg=9}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] run function QR/GF/GF_1
 execute as @e[name=qr_main,scores={qr_prg=9}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] at @s run summon minecraft:armor_stand qr_encode_sub ~~~
 execute as @e[name=qr_main,scores={qr_prg=9}] run scoreboard players add @e[name=qr_encode_sub] qr_encode 0
 execute as @e[name=qr_main,scores={qr_prg=9}] run scoreboard players set @e[name=qr_encode_sub] qr_encode_l 8
@@ -210,18 +199,8 @@ execute as @e[name=qr_main,scores={qr_prg=15}] run tp @s ~~0.5~
 execute if score mode qr_uid matches 6.. run scoreboard players set @e[name=qr_main,scores={qr_prg=15}] qr_prg 109
 execute if score mode qr_uid matches ..5 run scoreboard players set @e[name=qr_main,scores={qr_prg=15}] qr_prg 16
 #填充
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 1 run structure load qr_mode_1 ~1~~8 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 2 run structure load qr_mode_2 ~1~~8 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 3 run structure load qr_mode_3 ~1~~8 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 4 run structure load qr_mode_4 ~1~~8 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 5 run structure load qr_mode_5 ~1~~8 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 6 at @e[name=qr_split_set] run structure load qr_mode_6 ~1~~2 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 7 at @e[name=qr_split_set] run structure load qr_mode_7 ~1~~2 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 8 at @e[name=qr_split_set] run structure load qr_mode_8 ~1~~2 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 9 at @e[name=qr_split_set] run structure load qr_mode_9 ~1~~2 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 10 at @e[name=qr_split_set] run structure load qr_mode_10 ~1~~2 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 11 at @e[name=qr_split_set] run structure load qr_mode_11 ~1~~2 0_degrees none false true
-execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 12 at @e[name=qr_split_set] run structure load qr_mode_12 ~1~~2 0_degrees none false true
+function QR/config/config_mode
+
 #execute as @e[name=qr_main,scores={qr_prg=16}] run tellraw @a { "rawtext": [ { "text": "二维码框架已生成\n开始填充"}]}
 execute as @e[name=qr_main,scores={qr_prg=16}] unless entity @e[name=qr_read] run summon minecraft:armor_stand qr_read ~1~~6
 execute as @e[name=qr_main,scores={qr_prg=16}] at @e[name=qr_split_sub] positioned ~1~~ run tp @e[name=qr_read] ~~~
