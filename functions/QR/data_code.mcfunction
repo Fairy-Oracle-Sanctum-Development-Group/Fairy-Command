@@ -7,7 +7,7 @@ execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 10.. 
 execute as @e[name=qr_main,scores={qr_prg=0}] at @s run summon minecraft:armor_stand qr_encode_back ~1~~
 execute as @e[name=qr_main,scores={qr_prg=0}] at @s run scoreboard players set uid qr_uid 1
 scoreboard players set @e[name=qr_main,scores={qr_prg=0}] qr_prg 1
-execute as @e[name=qr_main,scores={qr_prg=1}] at @s run function QR_new/encode
+execute as @e[name=qr_main,scores={qr_prg=1}] at @s run function QR/encode
 #
 execute as @e[name=qr_main,scores={qr_prg=2}] as @e[type=minecraft:armor_stand,scores={qr_uid=1..}] if score @s qr_uid = uid qr_uid run scoreboard players operation @e[name=qr_main,scores={qr_prg=2}] qr_encode = @s qr_encode
 execute as @e[name=qr_main,scores={qr_prg=2}] run scoreboard players set @s qr_encode_l 8 
@@ -15,9 +15,9 @@ execute as @e[name=qr_main,scores={qr_prg=2}] at @s run tp @s ~7~~
 execute as @e[name=qr_main,scores={qr_prg=2}] at @s run summon minecraft:armor_stand qr_encode_back ~1~~
 execute as @e[name=qr_main,scores={qr_prg=2}] unless entity @e[name=qr_main_sub] run summon minecraft:armor_stand qr_main_sub ~1~~
 scoreboard players set @e[name=qr_main,scores={qr_prg=2}] qr_prg 3
-execute as @e[name=qr_main,scores={qr_prg=3}] at @s run function QR_new/encode
+execute as @e[name=qr_main,scores={qr_prg=3}] at @s run function QR/encode
 
-##function QR_new/encode_return
+##function QR/encode_return
 execute as @e[name=qr_main,scores={qr_prg=4}] at @s run scoreboard players operation @s qr_return = @s qr_encode_lall
 execute as @e[name=qr_main,scores={qr_prg=4}] at @s run scoreboard players add @s qr_return -4
 execute as @e[name=qr_main,scores={qr_prg=4}] at @s run scoreboard players operation @s qr_return %= "64" NUM
@@ -67,11 +67,11 @@ execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 40 ru
 scoreboard players set @e[name=qr_main,scores={qr_prg=6}] qr_prg 7
 
 #补全码
-function QR_new/pad
-function QR_new/pad
-function QR_new/pad
-function QR_new/pad
-function QR_new/pad
+function QR/pad
+function QR/pad
+function QR/pad
+function QR/pad
+function QR/pad
 
 ###版本6以上特殊处理
 #分割数据码
@@ -86,18 +86,18 @@ execute as @e[name=qr_main,scores={qr_prg=105}] run scoreboard players set @s qr
 execute as @e[name=qr_main,scores={qr_prg=106}] if entity @e[name=qr_split,scores={qr_code=..0}] as @e[name=qr_decode] run scoreboard players operation @s qr_split = @s GF_2
 execute as @e[name=qr_main,scores={qr_prg=106}] if entity @e[name=qr_split,scores={qr_code=..0}] run tellraw @a { "rawtext": [ { "text": "数据码分割完毕\n开始分块计算纠错码,生成多项式已备份"}]}
 execute as @e[name=qr_main,scores={qr_prg=106}] if entity @e[name=qr_split,scores={qr_code=..0}] run scoreboard players set @e[name=qr_main] qr_prg 108
-execute as @e[name=qr_main,scores={qr_prg=106}] as @e[name=qr_split,scores={qr_code=1..}] run function QR_new/split_config
+execute as @e[name=qr_main,scores={qr_prg=106}] as @e[name=qr_split,scores={qr_code=1..}] run function QR/split_config
 execute as @e[name=qr_main,scores={qr_prg=106}] run tellraw @a { "rawtext": [ { "text": "剩余待分割块数: "},{ "score": {"name": "@e[name=qr_split]", "objective": "qr_code" } }]} 
 execute as @e[name=qr_main,scores={qr_prg=106}] as @e[name=qr_split,scores={qr_code=1..}] run scoreboard players set @s qr_encode 0
 execute as @e[name=qr_main,scores={qr_prg=106}] as @e[name=qr_split,scores={qr_code=1..}] run scoreboard players add @s qr_code -1
 execute as @e[name=qr_main,scores={qr_prg=106}] as @e[name=qr_split,scores={qr_code=0}] run scoreboard players set @e[name=qr_main] qr_code 0 
 execute as @e[name=qr_main,scores={qr_prg=106}] run scoreboard players set @s qr_prg 107
 #
-execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR_new/split
-execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR_new/split
-execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR_new/split
-execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR_new/split
-execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR_new/split
+execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR/split
+execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR/split
+execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR/split
+execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR/split
+execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @s run function QR/split
 
 #纠错码部分
 execute as @e[name=qr_main,scores={qr_prg=108}] run tp @e[name=qr_split] @e[name=qr_split_sub]

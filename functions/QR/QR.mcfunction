@@ -38,7 +38,7 @@ execute as @e[name=qr_main,scores={qr_prg=0}] run summon minecraft:armor_stand q
 execute as @e[name=qr_main,scores={qr_prg=0}] run scoreboard players set @e[c=1,name=qr_decode] qr_decode_uid -1
 execute as @e[name=qr_main,scores={qr_prg=0}] run scoreboard players set time qr_uid 0
 #读取版本信息
-execute if entity @e[name=qr_main,scores={qr_prg=0}] run function QR_new/version
+execute if entity @e[name=qr_main,scores={qr_prg=0}] run function QR/version
 
 #生成版本信息
 tp @e[name=qr_main,scores={qr_prg=0}] ~5~~
@@ -53,18 +53,18 @@ execute as @e[name=qr_decode_place] at @s run tp @s ~8~~
 execute as @e[name=qr_decode_place] at @s run summon minecraft:armor_stand qr_decode ~~-0.5~
 
 #生成多项式
-execute if score mode qr_uid matches 1 run function QR_new/generator_7
-execute if score mode qr_uid matches 2 run function QR_new/generator_10
-execute if score mode qr_uid matches 3 run function QR_new/generator_15
-execute if score mode qr_uid matches 4 run function QR_new/generator_20
-execute if score mode qr_uid matches 5 run function QR_new/generator_26
-execute if score mode qr_uid matches 6 run function QR_new/generator_18
-execute if score mode qr_uid matches 7 run function QR_new/generator_20
-execute if score mode qr_uid matches 8 run function QR_new/generator_24
-execute if score mode qr_uid matches 9 run function QR_new/generator_30
-execute if score mode qr_uid matches 10 run function QR_new/generator_18
-execute if score mode qr_uid matches 11 run function QR_new/generator_20
-execute if score mode qr_uid matches 12 run function QR_new/generator_24
+execute if score mode qr_uid matches 1 run function QR/generator_7
+execute if score mode qr_uid matches 2 run function QR/generator_10
+execute if score mode qr_uid matches 3 run function QR/generator_15
+execute if score mode qr_uid matches 4 run function QR/generator_20
+execute if score mode qr_uid matches 5 run function QR/generator_26
+execute if score mode qr_uid matches 6 run function QR/generator_18
+execute if score mode qr_uid matches 7 run function QR/generator_20
+execute if score mode qr_uid matches 8 run function QR/generator_24
+execute if score mode qr_uid matches 9 run function QR/generator_30
+execute if score mode qr_uid matches 10 run function QR/generator_18
+execute if score mode qr_uid matches 11 run function QR/generator_20
+execute if score mode qr_uid matches 12 run function QR/generator_24
 
 #分配生成多项式实体分数
 execute unless entity @e[scores={qr_decode_uid=0..}] run scoreboard players set uid qr_decode_uid 0
@@ -82,7 +82,7 @@ execute as @e[name=qr_decode_place] if score @s qr_decode = @s qr_encode run tel
 execute as @e[name=qr_decode_place] if score @s qr_decode = @s qr_encode run kill @s
 
 #编码
-function QR_new/data_code
+function QR/data_code
 
 #计算纠错码
 execute as @e[name=qr_main,scores={qr_prg=8}] run tp @e[name=qr_decode,scores={qr_decode_uid=-1}] ~8~-0.5~
@@ -93,21 +93,21 @@ execute as @e[name=qr_main,scores={qr_prg=101}] run summon minecraft:armor_stand
 execute as @e[name=qr_main,scores={qr_prg=101}] run scoreboard players add @s GF_1 -8
 scoreboard players set @e[name=qr_main,scores={qr_prg=101}] qr_prg 102
 #
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
-function QR_new/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
+function QR/sup
 
 execute as @e[name=qr_main,scores={qr_prg=8}] run kill @e[name=qr_sup]
 execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=-1}] at @s if block ~~~ minecraft:white_concrete [] if block ~-1~~ minecraft:white_concrete [] if block ~-2~~ minecraft:white_concrete [] if block ~-3~~ minecraft:white_concrete [] if block ~-4~~ minecraft:white_concrete [] if block ~-5~~ minecraft:white_concrete [] if block ~-6~~ minecraft:white_concrete [] if block ~-7~~ minecraft:white_concrete [] run scoreboard players add @e[name=qr_main,scores={qr_prg=8}] qr_code 1
@@ -131,9 +131,9 @@ execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 11 ru
 execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 12 run fill ~1~3~ ~8~3~ minecraft:white_concrete [] replace minecraft:air []
 
 #
-execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode] at @s run function QR_new/decode
+execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode] at @s run function QR/decode
 execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=-1}] run scoreboard players operation @s GF_2 = @s qr_decode
-execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=-1}] run function QR_new/GF_2
+execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=-1}] run function QR/GF_2
 execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] run scoreboard players operation @s GF_2 += @e[name=qr_decode,scores={qr_decode_uid=-1}] GF_1
 execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_decode_uid=0..,GF_2=255..}] run scoreboard players operation @s GF_2 %= "255" NUM
 #execute as @e[name=qr_main,scores={qr_prg=8}] run tellraw @a { "rawtext": [ { "score": {"name": "@e[name=qr_decode,scores={qr_decode_uid=1}]", "objective": "GF_2" } },{ "text": "," },{ "score": {"name": "@e[name=qr_decode,scores={qr_decode_uid=2}]", "objective": "GF_2" } }] }
@@ -141,20 +141,20 @@ scoreboard players set @e[name=qr_main,scores={qr_prg=8}] qr_prg 9
 
 #
 execute as @e[name=qr_main,scores={qr_prg=9}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] run scoreboard players operation @s GF_1 = @s GF_2
-execute as @e[name=qr_main,scores={qr_prg=9}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] run function QR_new/GF_1
+execute as @e[name=qr_main,scores={qr_prg=9}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] run function QR/GF_1
 execute as @e[name=qr_main,scores={qr_prg=9}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] at @s run summon minecraft:armor_stand qr_encode_sub ~~~
 execute as @e[name=qr_main,scores={qr_prg=9}] run scoreboard players add @e[name=qr_encode_sub] qr_encode 0
 execute as @e[name=qr_main,scores={qr_prg=9}] run scoreboard players set @e[name=qr_encode_sub] qr_encode_l 8
 execute as @e[name=qr_main,scores={qr_prg=9}] as @e[name=qr_decode,scores={qr_decode_uid=0..}] at @s run scoreboard players operation @e[c=1,r=2,name=qr_encode_sub,scores={qr_encode=0}] qr_encode = @s GF_2
 scoreboard players set @e[name=qr_main,scores={qr_prg=9}] qr_prg 10
-execute if entity @e[name=qr_encode_sub] run function QR_new/encode_sub
-execute if entity @e[name=qr_encode_sub] run function QR_new/encode_sub
-execute if entity @e[name=qr_encode_sub] run function QR_new/encode_sub
-execute if entity @e[name=qr_encode_sub] run function QR_new/encode_sub
-execute if entity @e[name=qr_encode_sub] run function QR_new/encode_sub
-execute if entity @e[name=qr_encode_sub] run function QR_new/encode_sub
-execute if entity @e[name=qr_encode_sub] run function QR_new/encode_sub
-execute if entity @e[name=qr_encode_sub] run function QR_new/encode_sub
+execute if entity @e[name=qr_encode_sub] run function QR/encode_sub
+execute if entity @e[name=qr_encode_sub] run function QR/encode_sub
+execute if entity @e[name=qr_encode_sub] run function QR/encode_sub
+execute if entity @e[name=qr_encode_sub] run function QR/encode_sub
+execute if entity @e[name=qr_encode_sub] run function QR/encode_sub
+execute if entity @e[name=qr_encode_sub] run function QR/encode_sub
+execute if entity @e[name=qr_encode_sub] run function QR/encode_sub
+execute if entity @e[name=qr_encode_sub] run function QR/encode_sub
 #tellraw @a { "rawtext": [ { "score": {"name": "@e[name=qr_main]", "objective": "qr_prg" } } ] }
 
 #
@@ -167,21 +167,21 @@ execute as @e[name=qr_main,scores={qr_prg=11}] run fill ~1~~4 ~64~20~4 minecraft
 scoreboard players set @e[name=qr_main,scores={qr_prg=11}] qr_prg 12
 
 #异或运算
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
-function QR_new/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
+function QR/xor
 
 #
 execute as @e[name=qr_main,scores={qr_prg=13}] run kill @e[name=qr_xor]

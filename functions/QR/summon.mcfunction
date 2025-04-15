@@ -32,8 +32,8 @@ execute as @e[name=qr_main,scores={qr_prg=16}] run scoreboard players set @e[nam
 scoreboard players set @e[name=qr_main,scores={qr_prg=16}] qr_prg 17
 
 #
-execute if entity @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches ..5 run function QR_new/read_low
-execute if entity @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 6.. run function QR_new/read_high
+execute if entity @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches ..5 run function QR/read_low
+execute if entity @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 6.. run function QR/read_high
 
 
 execute as @e[name=qr_fill] run scoreboard players set @e[name=qr_fill] qr_code 0
@@ -144,8 +144,8 @@ execute if score mode qr_uid matches 1..3 as @e[name=qr_main,scores={qr_prg=19}]
 execute if score mode qr_uid matches 4..6 as @e[name=qr_main,scores={qr_prg=19}] run scoreboard players set @e[name=qr_matrix] GF_1 41
 execute if score mode qr_uid matches 7..9 as @e[name=qr_main,scores={qr_prg=19}] run scoreboard players set @e[name=qr_matrix] GF_1 53
 execute if score mode qr_uid matches 10..12 as @e[name=qr_main,scores={qr_prg=19}] run scoreboard players set @e[name=qr_matrix] GF_1 65
-execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR_new/matrix
-execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR_new/matrix
-execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR_new/matrix
-execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR_new/matrix
-execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR_new/matrix
+execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR/matrix
+execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR/matrix
+execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR/matrix
+execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR/matrix
+execute as @e[name=qr_main,scores={qr_prg=19}] as @e[name=qr_matrix] at @s run function QR/matrix

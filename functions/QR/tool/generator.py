@@ -8,7 +8,7 @@ f = re.findall(pattern,n)
 
 num = 0
 
-file = open(f'C:/Users/ZHANGBaoHang/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/Fairy-Command/functions/QR_new/generator_{len(f)}.mcfunction','w',encoding='utf-8') 
+file = open(f'C:/Users/ZHANGBaoHang/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/Fairy-Command/functions/QR/generator_{len(f)}.mcfunction','w',encoding='utf-8') 
 for i in f:
     file.write("execute as @e[name=qr_decode_place] at @s[scores={qr_encode_l=%s}] run scoreboard players set @e[c=1,r=2,name=qr_decode] GF_2 %s\n" % ( num+1 , i[1:-1] ))
     num += 1
