@@ -62,7 +62,33 @@ execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 8 run
 execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 9 run scoreboard players add @s qr_encode 232
 execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 10 run scoreboard players add @s qr_encode 274
 execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 11 run scoreboard players add @s qr_encode 324
-execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 12 run scoreboard players add @s qr_encode 270
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 12 run scoreboard players add @s qr_encode 370
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 13 run scoreboard players add @s qr_encode 428
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 14 run scoreboard players add @s qr_encode 461
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 15 run scoreboard players add @s qr_encode 523
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 16 run scoreboard players add @s qr_encode 589
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 17 run scoreboard players add @s qr_encode 647
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 18 run scoreboard players add @s qr_encode 721
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 19 run scoreboard players add @s qr_encode 795
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 20 run scoreboard players add @s qr_encode 861
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 21 run scoreboard players add @s qr_encode 932
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 22 run scoreboard players add @s qr_encode 1006
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 23 run scoreboard players add @s qr_encode 1094
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 24 run scoreboard players add @s qr_encode 1174
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 25 run scoreboard players add @s qr_encode 1276
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 26 run scoreboard players add @s qr_encode 1370
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 27 run scoreboard players add @s qr_encode 1468
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 28 run scoreboard players add @s qr_encode 1531
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 29 run scoreboard players add @s qr_encode 1631
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 30 run scoreboard players add @s qr_encode 1735
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 31 run scoreboard players add @s qr_encode 1843
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 33 run scoreboard players add @s qr_encode 2071
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 34 run scoreboard players add @s qr_encode 2191
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 35 run scoreboard players add @s qr_encode 2306
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 36 run scoreboard players add @s qr_encode 2434
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 37 run scoreboard players add @s qr_encode 2566
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 38 run scoreboard players add @s qr_encode 2702
+execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 39 run scoreboard players add @s qr_encode 2812
 execute as @e[name=qr_main,scores={qr_prg=6}] if score mode qr_uid matches 40 run scoreboard players add @s qr_encode 2956
 scoreboard players set @e[name=qr_main,scores={qr_prg=6}] qr_prg 7
 

@@ -1,5 +1,5 @@
-file1 = open(r"C:\Users\ZHANGBaoHang\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\development_behavior_packs\Fairy-Command\functions\QR_new\tool\version_information.txt",'r',encoding='utf-8')
-file2 = open(r"C:\Users\ZHANGBaoHang\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\development_behavior_packs\Fairy-Command\functions\QR_new\tool\split_config.mcfunction",'w',encoding='utf-8')
+file1 = open(r"C:\Users\ZHANGBaoHang\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\development_behavior_packs\Fairy-Command\functions\QR\tool\version_information.txt",'r',encoding='utf-8')
+file2 = open(r"C:\Users\ZHANGBaoHang\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\development_behavior_packs\Fairy-Command\functions\QR\tool\split_config.mcfunction",'w',encoding='utf-8')
 
 i = 1
 num = 1
@@ -22,7 +22,7 @@ while i <= 160:
         else:
             file2.write("#\nexecute if score mode qr_uid matches %s run scoreboard players set @e[name=qr_split,scores={qr_code=1..%s}] qr_split %s\n\n" % ( num , int(version[-2]) , int(version[-1]) ))
             
-            num += 1
+        num += 1
 
         print(version)
     i += 1

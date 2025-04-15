@@ -116,19 +116,7 @@ execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode,scores={qr_de
 #
 execute as @e[name=qr_main,scores={qr_prg=8}] run kill @e[name=qr_sup]
 execute as @e[name=qr_main,scores={qr_prg=8}] run fill ~1~~ ~64~~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 2 run fill ~1~1~ ~24~~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 3 run fill ~1~1~ ~64~~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 4.. run fill ~1~1~ ~64~1~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 4 run fill ~1~2~ ~40~2~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 5 run fill ~1~2~ ~64~2~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 5 run fill ~1~3~ ~24~3~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 6 run fill ~1~2~ ~24~2~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 7 run fill ~1~2~ ~40~2~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 8 run fill ~1~3~ ~8~3~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 9 run fill ~1~3~ ~56~3~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 10 run fill ~1~2~ ~24~2~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 11 run fill ~1~2~ ~40~2~ minecraft:white_concrete [] replace minecraft:air []
-execute as @e[name=qr_main,scores={qr_prg=8}] if score mode qr_uid matches 12 run fill ~1~3~ ~8~3~ minecraft:white_concrete [] replace minecraft:air []
+function QR/fill_config
 
 #
 execute as @e[name=qr_main,scores={qr_prg=8}] as @e[name=qr_decode] at @s run function QR/decode
