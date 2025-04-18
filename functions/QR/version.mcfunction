@@ -69,8 +69,7 @@ execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 13 ru
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 13 run scoreboard players set @s qr_xor 107
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 13 run scoreboard players set @s GF_1 3424
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 13 run scoreboard players set @s qr_split 4
-execute at @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 13 run tellraw @a { "rawtext": [ { "text": "开始生成(版本: 13,字符数量: "},{ "score": {"name": "uid", "objective": "qr_uid" } },{"text":")
-组1块数: 4,码总数: 133,数据码数: 107, 纠错码数: 26\n开始生成生成多项式(26位纠错码)\n开始编码" } ] }
+execute at @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 13 run tellraw @a { "rawtext": [ { "text": "开始生成(版本: 13,字符数量: "},{ "score": {"name": "uid", "objective": "qr_uid" } },{"text":")组1块数: 4,码总数: 133,数据码数: 107, 纠错码数: 26\n开始生成生成多项式(26位纠错码)\n开始编码" } ] }
 
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 14 run scoreboard players set @e[name=qr_decode_place] qr_encode 31
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 14 run scoreboard players set @s qr_xor 116
@@ -184,8 +183,7 @@ execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 32 ru
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 32 run scoreboard players set @s qr_xor 115
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 32 run scoreboard players set @s GF_1 15640
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 32 run scoreboard players set @s qr_split 17
-execute at @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 32 run tellraw @a { "rawtext": [ { "text": "开始生成(版本: 32,字符数量: "},{ "score": {"name": "uid", "objective": "qr_uid" } },{"text":")
-组1块数: 17,码总数: 145,数据码数: 115, 纠错码数: 30\n开始生成生成多项式(30位纠错码)\n开始编码" } ] }
+execute at @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 32 run tellraw @a { "rawtext": [ { "text": "开始生成(版本: 32,字符数量: "},{ "score": {"name": "uid", "objective": "qr_uid" } },{"text":")组1块数: 17,码总数: 145,数据码数: 115, 纠错码数: 30\n开始生成生成多项式(30位纠错码)\n开始编码" } ] }
 
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 33 run scoreboard players set @e[name=qr_decode_place] qr_encode 31
 execute as @e[name=qr_main,scores={qr_prg=0}] if score mode qr_uid matches 33 run scoreboard players set @s qr_xor 116
