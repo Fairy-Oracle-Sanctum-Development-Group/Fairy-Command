@@ -14,6 +14,7 @@ execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 12 a
 #
 execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 10 at @e[name=qr_split_set] run tag @e[name=qr_read] add qr_read_more
 execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 12 at @e[name=qr_split_set] run tag @e[name=qr_read] add qr_read_more
+execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 14.. at @e[name=qr_split_set] run tag @e[name=qr_read] add qr_read_more
 #execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 6 at @e[name=qr_fill] run setblock ~~3~ bedrock
 
 execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 1 run scoreboard players set @e[name=qr_read] qr_encode_lall 152

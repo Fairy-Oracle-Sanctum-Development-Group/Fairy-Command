@@ -229,5 +229,8 @@ execute as @e[name=qr_main,scores={qr_prg=109}] as @e[name=qr_decode] run scoreb
 execute as @e[name=qr_main,scores={qr_prg=109}] run scoreboard players set @s qr_code 0
 execute as @e[name=qr_main,scores={qr_prg=109}] run scoreboard players set @s qr_prg 8
 
+# execute as @e[name=qr_main,scores={qr_prg=8..}] as @e[name=qr_readhigh_tag] at @s if block ~~~ minecraft:air [] unless block ~1~~ minecraft:air [] run tp @s ~~1~
+# execute as @e[name=qr_main,scores={qr_prg=8..}] as @e[name=qr_readhigh_tag] at @s if block ~~~ minecraft:air [] unless block ~1~-1~ minecraft:air [] run tp @s ~1~~
+# execute as @e[name=qr_main,scores={qr_prg=8..}] as @e[name=qr_readhigh_tag] at @s if block ~1~-1~ minecraft:air [] run tp @s ~-7~-1~
 #titleraw @a actionbar { "rawtext": [ { "text": "qr_split_sub: "},{ "score": {"name": "@e[name=qr_split_sub]", "objective": "qr_code" } }]}
 #By Baby_2016

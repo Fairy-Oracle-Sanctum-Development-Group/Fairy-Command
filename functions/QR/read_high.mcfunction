@@ -22,9 +22,10 @@ execute as @e[name=qr_read_sub,scores={qr_split=0}] as @e[name=qr_read,scores={q
 execute as @e[name=qr_read_sub,scores={qr_split=0}] run kill @s
 
 execute as @e[name=qr_read,tag=qr_read_more] at @s if block ~~~ minecraft:air [] run kill @e[name=qr_read_sub]
-execute as @e[name=qr_read,tag=qr_read_more] at @s if block ~~~ minecraft:air [] run summon minecraft:armor_stand qr_read_sub ~~~4
+execute as @e[name=qr_read,tag=qr_read_more] at @s if block ~~~ minecraft:air [] at @e[name=qr_readhigh_tag] run summon minecraft:armor_stand qr_read_sub ~~~
+execute as @e[name=qr_read,tag=qr_read_more] at @s if block ~~~ minecraft:air [] run kill @e[name=qr_readhigh_tag]
 execute as @e[name=qr_read,tag=qr_read_more] at @s if block ~~~ minecraft:air [] run setblock ~~~ minecraft:diamond_block
-execute as @e[name=qr_read,tag=qr_read_more] at @s if block ~~~ minecraft:diamond_block [] if entity @e[name=qr_read_sub,scores={qr_split=2}] run tag @s remove qr_read_more
+execute as @e[name=qr_read,tag=qr_read_more] at @s if block ~~~ minecraft:diamond_block [] at @e[name=qr_read_sub,scores={qr_split=2}] if block ~~~2 minecraft:air [] run tag @s remove qr_read_more
 execute as @e[name=qr_read,tag=!qr_read_more] at @s if block ~~~ minecraft:diamond_block [] run setblock ~~~ minecraft:air
 execute as @e[name=qr_read,tag=!qr_read_more] at @s if block ~~~ minecraft:air [] run kill @e[name=qr_read_sub]
 execute as @e[name=qr_read,tag=!qr_read_more] at @s if block ~~~ minecraft:air [] run scoreboard players set @s qr_encode 0

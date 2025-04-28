@@ -15,6 +15,9 @@ scoreboard players operation @e[name=qr_split_set] qr_encode %= "8" NUM
 execute as @e[name=qr_split_set,scores={qr_encode=0}] at @s run tp @s ~-64~1~
 
 execute if score @s qr_encode = @s qr_split as @e[name=qr_split_sub] at @s run tp @s ~~~2
+execute if score @s qr_encode = @s qr_split as @e[name=qr_split_set,tag=!qr_readhigh_tag] at @s if block ~~~-2 minecraft:air [] run summon minecraft:armor_stand qr_readhigh_tag ~-7~~
+execute if score @s qr_encode = @s qr_split as @e[name=qr_split_set,tag=!qr_readhigh_tag] at @s if block ~~~-2 minecraft:air [] run tag @s add qr_readhigh_tag
+
 execute if score @s qr_encode = @s qr_split as @e[name=qr_split_sub] at @s run tp @e[name=qr_split_set] @s
 execute if score @s qr_encode = @s qr_split as @e[name=qr_split_sub] at @s run scoreboard players set @e[name=qr_split_set] qr_decode 0
 execute if score @s qr_encode = @s qr_split run scoreboard players set @e[name=qr_main] qr_prg 106
