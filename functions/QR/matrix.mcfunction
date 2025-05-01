@@ -1,4 +1,6 @@
 scoreboard players set @s qr_encode 0
+execute if block ~~1~ minecraft:air [] unless block ~~2~ minecraft:air [] run clone ~~2~ ~~2~ ~~1~ masked move
+
 execute if block ~~~ minecraft:white_concrete [] run scoreboard players add @s qr_encode 1
 execute if block ~~1~ minecraft:white_concrete [] run scoreboard players add @s qr_encode -1
 
@@ -22,6 +24,7 @@ execute if score mode qr_uid matches 1..3 if score @s qr_decode = @s GF_1 run tp
 execute if score mode qr_uid matches 4..6 if score @s qr_decode = @s GF_1 run tp @s ~-41~~1
 execute if score mode qr_uid matches 7..9 if score @s qr_decode = @s GF_1 run tp @s ~-53~~1
 execute if score mode qr_uid matches 10..12 if score @s qr_decode = @s GF_1 run tp @s ~-65~~1
+execute if score mode qr_uid matches 13..15 if score @s qr_decode = @s GF_1 run tp @s ~-77~~1
 execute if score @s qr_decode = @s GF_1 run scoreboard players add @s qr_encode_l 1
 execute if score @s qr_decode = @s GF_1 run scoreboard players set @s qr_decode 0
 execute if score @s qr_encode_l = @s GF_1 run scoreboard players set @e[name=qr_main,scores={qr_prg=19}] qr_prg 20

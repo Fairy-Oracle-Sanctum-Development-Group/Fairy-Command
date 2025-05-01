@@ -31,8 +31,10 @@ scoreboard objectives add qr_split dummy
 execute unless entity @e[name=qr_main] run setblock ~~2~ minecraft:air
 scoreboard players add @e[name=qr_main] qr_prg 0
 scoreboard players add @e[name=qr_main] qr_split 0
-execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run fill ~64~64~6 ~~~ minecraft:air
-execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~8 run structure load a ~~~
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~~~
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~64~~
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~~~64
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~64~~64
 execute as @e[name=qr_main,scores={qr_prg=0}] run summon minecraft:armor_stand qr_decode_place ~~~2
 execute as @e[name=qr_main,scores={qr_prg=0}] run summon minecraft:armor_stand qr_decode ~8~-0.5~
 execute as @e[name=qr_main,scores={qr_prg=0}] run scoreboard players set @e[c=1,name=qr_decode] qr_decode_uid -1
@@ -200,12 +202,14 @@ execute if score mode qr_uid matches 6.. run scoreboard players set @e[name=qr_m
 execute if score mode qr_uid matches ..5 run scoreboard players set @e[name=qr_main,scores={qr_prg=15}] qr_prg 16
 #填充
 function QR/config/config_mode
+execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~~2 run function QR/mode_summon
+execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches ..12 run scoreboard players set @e[name=qr_main,scores={qr_prg=16}] qr_prg 17
 
 #execute as @e[name=qr_main,scores={qr_prg=16}] run tellraw @a { "rawtext": [ { "text": "二维码框架已生成\n开始填充"}]}
-execute as @e[name=qr_main,scores={qr_prg=16}] unless entity @e[name=qr_read] run summon minecraft:armor_stand qr_read ~1~~6
-execute as @e[name=qr_main,scores={qr_prg=16}] at @e[name=qr_split_sub] positioned ~1~~ run tp @e[name=qr_read] ~~~
-execute as @e[name=qr_main,scores={qr_prg=16}] run scoreboard players operation @e[name=qr_read] qr_split = @e[name=qr_main] qr_split
-execute as @e[name=qr_main,scores={qr_prg=16}] run setblock ~~2~ minecraft:redstone_block
+execute as @e[name=qr_main,scores={qr_prg=17}] unless entity @e[name=qr_read] run summon minecraft:armor_stand qr_read ~1~~6
+execute as @e[name=qr_main,scores={qr_prg=17}] at @e[name=qr_split_sub] positioned ~1~~ run tp @e[name=qr_read] ~~~
+execute as @e[name=qr_main,scores={qr_prg=17}] run scoreboard players operation @e[name=qr_read] qr_split = @e[name=qr_main] qr_split
+execute as @e[name=qr_main,scores={qr_prg=17}] run setblock ~~2~ minecraft:redstone_block
 
 #
 execute as @e[name=qr_main,scores={qr_prg=109}] run scoreboard players add @e[name=qr_split_sub] qr_code -1
@@ -228,6 +232,9 @@ execute as @e[name=qr_main,scores={qr_prg=109}] run fill ~64~64~2 ~1~~2 minecraf
 execute as @e[name=qr_main,scores={qr_prg=109}] as @e[name=qr_decode] run scoreboard players operation @s GF_2 = @s qr_split
 execute as @e[name=qr_main,scores={qr_prg=109}] run scoreboard players set @s qr_code 0
 execute as @e[name=qr_main,scores={qr_prg=109}] run scoreboard players set @s qr_prg 8
+
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 unless entity @e[name=qr_module_a] run scoreboard players set @e[name=qr_main] qr_prg 17
 
 # execute as @e[name=qr_main,scores={qr_prg=8..}] as @e[name=qr_readhigh_tag] at @s if block ~~~ minecraft:air [] unless block ~1~~ minecraft:air [] run tp @s ~~1~
 # execute as @e[name=qr_main,scores={qr_prg=8..}] as @e[name=qr_readhigh_tag] at @s if block ~~~ minecraft:air [] unless block ~1~-1~ minecraft:air [] run tp @s ~1~~

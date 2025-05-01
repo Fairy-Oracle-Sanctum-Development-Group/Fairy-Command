@@ -1,8 +1,8 @@
-execute as @e[name=qr_main,scores={qr_prg=17}] as @e[name=qr_read] at @s unless entity @e[name=qr_read_sub] run summon minecraft:armor_stand qr_read_sub ~~~
-#execute as @e[name=qr_main,scores={qr_prg=17}] as @e[name=qr_read] at @s run setblock ~~~1 iron_block
+execute as @e[name=qr_main,scores={qr_prg=18}] as @e[name=qr_read] at @s unless entity @e[name=qr_read_sub] run summon minecraft:armor_stand qr_read_sub ~~~
+#execute as @e[name=qr_main,scores={qr_prg=18}] as @e[name=qr_read] at @s run setblock ~~~1 iron_block
 
-execute as @e[name=qr_main,scores={qr_prg=17}] as @e[name=qr_read_sub] at @s if block ~~~ minecraft:white_concrete [] at @e[name=qr_fill] run setblock ~~~ minecraft:white_concrete []
-execute as @e[name=qr_main,scores={qr_prg=17}] as @e[name=qr_read_sub] at @s if block ~~~ minecraft:black_concrete [] at @e[name=qr_fill] run setblock ~~~ minecraft:black_concrete []
+execute as @e[name=qr_main,scores={qr_prg=18}] as @e[name=qr_read_sub] at @s if block ~~~ minecraft:white_concrete [] at @e[name=qr_fill] run setblock ~~~ minecraft:white_concrete []
+execute as @e[name=qr_main,scores={qr_prg=18}] as @e[name=qr_read_sub] at @s if block ~~~ minecraft:black_concrete [] at @e[name=qr_fill] run setblock ~~~ minecraft:black_concrete []
 
 scoreboard players add @e[name=qr_read] qr_decode 0
 scoreboard players add @e[name=qr_read_sub] qr_split 0
