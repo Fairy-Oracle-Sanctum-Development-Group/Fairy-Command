@@ -9,6 +9,12 @@ execute as @e[name=qr_module,scores={qr_prg=1}] at @s run fill ~7~~7 ~~~ minecra
 execute as @e[name=qr_module,scores={qr_prg=1}] at @s run structure load finder_pattern ~~~
 execute as @e[name=qr_module,scores={qr_prg=1}] at @s run setblock ~7~~8 minecraft:black_concrete
 
+#
+execute as @e[name=qr_module,scores={qr_prg=1}] at @s run fill ~~~8 ~2~~8 minecraft:black_concrete
+execute as @e[name=qr_module,scores={qr_prg=1}] at @s run fill ~3~~8 ~3~~8 minecraft:white_concrete
+execute as @e[name=qr_module,scores={qr_prg=1}] at @s run fill ~4~~8 ~6~~8 minecraft:black_concrete
+execute if score "mode" qr_uid matches 13 as @e[name=qr_module,scores={qr_prg=1}] at @s run structure load qr_via_13 ~8~~
+
 #alignment_pattern
 execute as @e[name=qr_module,scores={qr_prg=1}] at @s unless entity @e[name=qr_module_a] run summon minecraft:armor_stand qr_module_a ~8~~6
 scoreboard players add @e[name=qr_module_a] qr_prg 0
@@ -18,8 +24,8 @@ execute as @e[name=qr_module,scores={qr_prg=1}] as @e[name=qr_module_a,scores={q
 scoreboard players set @e[name=qr_module_a,scores={qr_prg=0}] qr_prg 1
 execute as @e[name=qr_module_a] at @s if block ~-1~~ minecraft:black_concrete [] run setblock ~~~ minecraft:white_concrete
 execute as @e[name=qr_module_a] at @s if block ~-1~~ minecraft:white_concrete [] run setblock ~~~ minecraft:black_concrete
-execute as @e[name=qr_module_a] at @s if block ~~~-1 minecraft:black_concrete [] run setblock ~~~ minecraft:white_concrete
-execute as @e[name=qr_module_a] at @s if block ~~~-1 minecraft:white_concrete [] run setblock ~~~ minecraft:black_concrete
+execute as @e[name=qr_module_a,scores={qr_prg=3}] at @s if block ~~~-1 minecraft:black_concrete [] run setblock ~~~ minecraft:white_concrete
+execute as @e[name=qr_module_a,scores={qr_prg=3}] at @s if block ~~~-1 minecraft:white_concrete [] run setblock ~~~ minecraft:black_concrete
 execute as @e[name=qr_module_a] run scoreboard players operation @s qr_encode_lall = @s qr_code
 execute as @e[name=qr_module_a] run scoreboard players operation @s qr_encode_lall /= "2" NUM
 execute as @e[name=qr_module_a,scores={qr_prg=1}] if score @s qr_encode_lall = @s qr_encode at @s run summon minecraft:armor_stand qr_module_b ~-3~~-2
@@ -30,13 +36,30 @@ execute as @e[name=qr_module_a] run scoreboard players add @s qr_encode -1
 execute as @e[name=qr_module_a] if score @s qr_encode matches 0 run scoreboard players add @s qr_prg 1
 execute as @e[name=qr_module_a,scores={qr_prg=2}] run scoreboard players operation @s qr_encode = @s qr_code
 execute as @e[name=qr_module_a,scores={qr_prg=2}] at @s run summon minecraft:armor_stand qr_pattern1 ~-1~~-6
-execute as @e[name=qr_module_a,scores={qr_prg=2}] run scoreboard players set @s qr_prg 3
+#
+execute at @e[name=qr_module_a,scores={qr_prg=2}] at @e[c=1,name=qr_pattern1] run fill ~-1~~ ~-1~~2 minecraft:black_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=2}] at @e[c=1,name=qr_pattern1] run fill ~-1~~3 ~-1~~3 minecraft:white_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=2}] at @e[c=1,name=qr_pattern1] run fill ~-1~~4 ~-1~~5 minecraft:black_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=2}] at @e[c=1,name=qr_pattern1] run fill ~-1~~7 ~-1~~8 minecraft:black_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=2}] at @e[c=1,name=qr_pattern1] run fill ~~~8 ~~~8 minecraft:black_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=2}] at @e[c=1,name=qr_pattern1] run fill ~2~~8 ~4~~8 minecraft:white_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=2}] at @e[c=1,name=qr_pattern1] run fill ~5~~8 ~5~~8 minecraft:black_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=2}] at @e[c=1,name=qr_pattern1] run fill ~6~~8 ~7~~8 minecraft:white_concrete
+#
+execute as @e[name=qr_module_a,scores={qr_prg=2}] run scoreboard players set @s qr_prg 3    
 execute as @e[name=qr_module_a,scores={qr_prg=4}] at @s run setblock ~~~ minecraft:black_concrete
 execute as @e[name=qr_module_a,scores={qr_prg=4}] at @e[name=qr_pattern1] run fill ~7~~7 ~~~ minecraft:white_concrete
 execute as @e[name=qr_module_a,scores={qr_prg=4}] at @e[name=qr_pattern1] run structure load finder_pattern ~1~~
 execute as @e[name=qr_module_a,scores={qr_prg=4}] at @s run fill ~-1~~1 ~6~~8 minecraft:white_concrete
 execute as @e[name=qr_module_a,scores={qr_prg=4}] at @s run structure load finder_pattern ~~~2
 execute as @e[name=qr_module_a,scores={qr_prg=4}] at @s run summon minecraft:armor_stand qr_pattern1 ~-1~~1
+#
+execute at @e[name=qr_module_a,scores={qr_prg=4}] at @e[c=1,name=qr_pattern1] run fill ~-1~~ ~-1~~1 minecraft:black_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=4}] at @e[c=1,name=qr_pattern1] run fill ~-1~~2 ~-1~~4 minecraft:white_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=4}] at @e[c=1,name=qr_pattern1] run fill ~-1~~5 ~-1~~5 minecraft:black_concrete
+execute at @e[name=qr_module_a,scores={qr_prg=4}] at @e[c=1,name=qr_pattern1] run fill ~-1~~6 ~-1~~7 minecraft:white_concrete
+execute if score "mode" qr_uid matches 13 at @e[name=qr_module_a,scores={qr_prg=4}] at @e[c=1,name=qr_pattern1] run structure load qr_via_13 ~2~~-3 90_degrees z 
+#
 execute as @e[name=qr_module_a,scores={qr_prg=4}] at @e[name=qr_module] run summon minecraft:armor_stand qr_pattern1 
 execute as @e[name=qr_module_a,scores={qr_prg=4}] run scoreboard players set @e[name=qr_module,scores={qr_prg=2}] qr_prg 3
 execute as @e[name=qr_module_a,scores={qr_prg=4}] run kill @s
@@ -131,13 +154,13 @@ execute as @e[name=qr_route,tag=qr_route1] at @s if block ~~~ minecraft:air [] i
 
 #
 execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] run setblock ~~1~ minecraft:red_wool
-execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~~~-1 minecraft:white_concrete [] if block ~2~~ minecraft:white_concrete [] run setblock ~~1~ minecraft:purple_wool
 execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~1~~1 minecraft:black_concrete [] run setblock ~~1~ minecraft:black_wool
-execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~1~~ minecraft:black_concrete [] run setblock ~~1~ minecraft:orange_wool
+execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~~~-1 minecraft:white_concrete [] if block ~2~~ minecraft:white_concrete [] run setblock ~~1~ minecraft:purple_wool
+execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~1~~ minecraft:black_concrete [] if block ~5~~ minecraft:black_concrete [] run setblock ~~1~ minecraft:orange_wool
 execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~1~~ minecraft:white_concrete [] run setblock ~~1~ minecraft:green_wool
 execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~1~~1 minecraft:black_concrete [] if block ~1~~ minecraft:white_concrete [] if block ~~~2 minecraft:white_concrete [] run setblock ~~1~ minecraft:cyan_wool
 execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~3~~3 minecraft:black_concrete [] if block ~~~2 minecraft:white_concrete [] if block ~~~5 minecraft:white_concrete [] run setblock ~~1~ minecraft:brown_wool
-execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~1~~ minecraft:black_concrete [] if block ~3~~2 minecraft:white_concrete [] run setblock ~~1~ minecraft:gold_block
+execute as @e[name=qr_route,tag=qr_route2] at @s if block ~~~ minecraft:air [] if block ~1~~ minecraft:black_concrete [] if block ~3~~2 minecraft:white_concrete [] if block ~4~~1 minecraft:black_concrete [] run setblock ~~1~ minecraft:gold_block
 
 #
 execute as @e[name=qr_route] at @s run tp @s ~1~~
