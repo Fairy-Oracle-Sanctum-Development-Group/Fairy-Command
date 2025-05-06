@@ -103,6 +103,8 @@ function QR/pad
 #分割数据码
 execute as @e[name=qr_main,scores={qr_prg=105}] run tellraw @a { "rawtext": [ { "text": "编码完毕\n开始分割数据码"}]}
 execute as @e[name=qr_main,scores={qr_prg=105}] run fill ~64~64~ ~1~~ minecraft:air
+execute as @e[name=qr_main,scores={qr_prg=105}] run fill ~64~128~ ~1~64~ minecraft:air
+execute as @e[name=qr_main,scores={qr_prg=105}] run fill ~64~192~ ~1~128~ minecraft:air
 execute as @e[name=qr_main,scores={qr_prg=105}] run summon minecraft:armor_stand qr_split ~~~6
 execute as @e[name=qr_main,scores={qr_prg=105}] run summon minecraft:armor_stand qr_split_sub ~~~8
 execute as @e[name=qr_main,scores={qr_prg=105}] run summon minecraft:armor_stand qr_split_set ~~~8

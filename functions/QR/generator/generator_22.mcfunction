@@ -20,3 +20,4 @@ execute as @e[name=qr_decode_place] at @s[scores={qr_encode_l=19}] run scoreboar
 execute as @e[name=qr_decode_place] at @s[scores={qr_encode_l=20}] run scoreboard players set @e[c=1,r=2,name=qr_decode] GF_2 160
 execute as @e[name=qr_decode_place] at @s[scores={qr_encode_l=21}] run scoreboard players set @e[c=1,r=2,name=qr_decode] GF_2 105
 execute as @e[name=qr_decode_place] at @s[scores={qr_encode_l=22}] run scoreboard players set @e[c=1,r=2,name=qr_decode] GF_2 165
+execute as @e[name=qr_decode_place] at @s[scores={qr_encode_l=23}] run scoreboard players set @e[c=1,r=2,name=qr_decode] GF_2 231

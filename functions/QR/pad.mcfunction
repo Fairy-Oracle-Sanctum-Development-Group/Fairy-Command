@@ -5,7 +5,7 @@ execute as @e[name=qr_main,scores={qr_return=0,qr_prg=7..}] run tp @s @e[name=qr
 
 scoreboard players set @e[name=qr_main,scores={qr_prg=7,qr_encode=0}] qr_code 0
 execute as @e[name=qr_main,scores={qr_prg=7,qr_encode=0}] run kill @e[name=qr_main_sub]
-execute as @e[name=qr_main,scores={qr_prg=7,qr_encode=0,qr_code=0}] run structure save qr_1 ~64~64~ ~1~~ 
+execute as @e[name=qr_main,scores={qr_prg=7,qr_encode=0,qr_code=0}] run structure save qr_1 ~64~315~ ~1~~ 
 execute as @e[name=qr_main,scores={qr_prg=7,qr_encode=0,qr_code=0}] run structure load qr_1 ~1~~6 0_degrees none false true
 #qr_main归位
 execute as @e[name=qr_main,scores={qr_prg=7,qr_encode=0}] run tp @s ~~~

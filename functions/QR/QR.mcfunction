@@ -31,10 +31,12 @@ scoreboard objectives add qr_split dummy
 execute unless entity @e[name=qr_main] run setblock ~~2~ minecraft:air
 scoreboard players add @e[name=qr_main] qr_prg 0
 scoreboard players add @e[name=qr_main] qr_split 0
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load b ~~~
 execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~~~
-execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~64~~
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~~64~
 execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~~~64
-execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~64~~64
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run fill ~64~~ ~100~5~64 air
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run fill ~64~~64 ~100~5~100 air
 execute as @e[name=qr_main,scores={qr_prg=0}] run summon minecraft:armor_stand qr_decode_place ~~~2
 execute as @e[name=qr_main,scores={qr_prg=0}] run summon minecraft:armor_stand qr_decode ~8~-0.5~
 execute as @e[name=qr_main,scores={qr_prg=0}] run scoreboard players set @e[c=1,name=qr_decode] qr_decode_uid -1
@@ -203,6 +205,10 @@ execute if score mode qr_uid matches ..5 run scoreboard players set @e[name=qr_m
 #填充
 function QR/config/config_mode
 execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~~2 run function QR/mode_summon
+execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~~2 run function QR/mode_summon
+execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~~2 run function QR/mode_summon
+execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~~2 run function QR/mode_summon
+execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~~2 run function QR/mode_summon
 execute as @e[name=qr_main,scores={qr_prg=16}] if score mode qr_uid matches ..12 run scoreboard players set @e[name=qr_main,scores={qr_prg=16}] qr_prg 17
 
 #execute as @e[name=qr_main,scores={qr_prg=16}] run tellraw @a { "rawtext": [ { "text": "二维码框架已生成\n开始填充"}]}
@@ -221,6 +227,33 @@ execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,s
 #
 execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..2}] if score mode qr_uid matches 10 run scoreboard players set @e[name=qr_main] qr_xor 68
 execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..2}] if score mode qr_uid matches 12 run scoreboard players set @e[name=qr_main] qr_xor 92
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..3}] if score mode qr_uid matches 14 run scoreboard players set @e[name=qr_main] qr_xor 115
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..5}] if score mode qr_uid matches 15 run scoreboard players set @e[name=qr_main] qr_xor 87
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..5}] if score mode qr_uid matches 16 run scoreboard players set @e[name=qr_main] qr_xor 98
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..1}] if score mode qr_uid matches 17 run scoreboard players set @e[name=qr_main] qr_xor 107
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..5}] if score mode qr_uid matches 18 run scoreboard players set @e[name=qr_main] qr_xor 120
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..3}] if score mode qr_uid matches 19 run scoreboard players set @e[name=qr_main] qr_xor 113
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..3}] if score mode qr_uid matches 20 run scoreboard players set @e[name=qr_main] qr_xor 107
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..4}] if score mode qr_uid matches 21 run scoreboard players set @e[name=qr_main] qr_xor 116
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..2}] if score mode qr_uid matches 22 run scoreboard players set @e[name=qr_main] qr_xor 111
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..4}] if score mode qr_uid matches 23 run scoreboard players set @e[name=qr_main] qr_xor 121
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..6}] if score mode qr_uid matches 24 run scoreboard players set @e[name=qr_main] qr_xor 117
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..8}] if score mode qr_uid matches 25 run scoreboard players set @e[name=qr_main] qr_xor 106
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..10}] if score mode qr_uid matches 26 run scoreboard players set @e[name=qr_main] qr_xor 114
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..8}] if score mode qr_uid matches 27 run scoreboard players set @e[name=qr_main] qr_xor 122
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..3}] if score mode qr_uid matches 28 run scoreboard players set @e[name=qr_main] qr_xor 117
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..7}] if score mode qr_uid matches 29 run scoreboard players set @e[name=qr_main] qr_xor 116
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..5}] if score mode qr_uid matches 30 run scoreboard players set @e[name=qr_main] qr_xor 115
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..13}] if score mode qr_uid matches 31 run scoreboard players set @e[name=qr_main] qr_xor 115
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..17}] if score mode qr_uid matches 32 run scoreboard players set @e[name=qr_main] qr_xor 115
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..17}] if score mode qr_uid matches 33 run scoreboard players set @e[name=qr_main] qr_xor 115
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..13}] if score mode qr_uid matches 34 run scoreboard players set @e[name=qr_main] qr_xor 115
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..12}] if score mode qr_uid matches 35 run scoreboard players set @e[name=qr_main] qr_xor 121
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..6}] if score mode qr_uid matches 36 run scoreboard players set @e[name=qr_main] qr_xor 121
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..17}] if score mode qr_uid matches 37 run scoreboard players set @e[name=qr_main] qr_xor 122
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..4}] if score mode qr_uid matches 38 run scoreboard players set @e[name=qr_main] qr_xor 122
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..20}] if score mode qr_uid matches 39 run scoreboard players set @e[name=qr_main] qr_xor 117
+execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,scores={qr_code=..19}] if score mode qr_uid matches 40 run scoreboard players set @e[name=qr_main] qr_xor 118
 
 #
 execute as @e[name=qr_main,scores={qr_prg=109}] run tellraw @a { "rawtext": [ { "text": "剩余待计算纠错码块数: "},{ "score": {"name": "@e[name=qr_split_sub]", "objective": "qr_code" } }]}
@@ -233,6 +266,15 @@ execute as @e[name=qr_main,scores={qr_prg=109}] as @e[name=qr_decode] run scoreb
 execute as @e[name=qr_main,scores={qr_prg=109}] run scoreboard players set @s qr_code 0
 execute as @e[name=qr_main,scores={qr_prg=109}] run scoreboard players set @s qr_prg 8
 
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
+execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
 execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 at @e[name=qr_split_set] positioned ~1~1~2 run function QR/matrix_summon
 execute as @e[name=qr_main,scores={qr_prg=110}] if score mode qr_uid matches 13..40 unless entity @e[name=qr_module_a] run scoreboard players set @e[name=qr_main] qr_prg 17
 

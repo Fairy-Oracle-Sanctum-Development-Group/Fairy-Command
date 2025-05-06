@@ -11,6 +11,33 @@ execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 10 a
 execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 11 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~62
 execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 12 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~66
 execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 13 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~70
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 14 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~74
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 15 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~78
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 16 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~82
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 17 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~86
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 18 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~90
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 19 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~94
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 20 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~98
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 21 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~102
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 22 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~106
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 23 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~110
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 24 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~114
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 25 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~118
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 26 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~122
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 27 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~126
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 28 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~130
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 29 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~134
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 30 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~138
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 31 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~142
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 32 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~146
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 33 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~150
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 34 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~154
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 35 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~158
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 36 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~162
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 37 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~166
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 38 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~170
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 39 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~174
+execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 40 at @e[name=qr_split_set] run summon minecraft:armor_stand qr_fill ~1~-0.5~178
 
 #
 execute as @e[name=qr_main,scores={qr_prg=17}] if score mode qr_uid matches 10 at @e[name=qr_split_set] run tag @e[name=qr_read] add qr_read_more
@@ -148,6 +175,12 @@ execute if score mode qr_uid matches 4..6 as @e[name=qr_main,scores={qr_prg=21}]
 execute if score mode qr_uid matches 7..9 as @e[name=qr_main,scores={qr_prg=21}] run scoreboard players set @e[name=qr_matrix] GF_1 53
 execute if score mode qr_uid matches 10..12 as @e[name=qr_main,scores={qr_prg=21}] run scoreboard players set @e[name=qr_matrix] GF_1 65
 execute if score mode qr_uid matches 13..15 as @e[name=qr_main,scores={qr_prg=21}] run scoreboard players set @e[name=qr_matrix] GF_1 77
+execute if score mode qr_uid matches 16..18 as @e[name=qr_main,scores={qr_prg=21}] run scoreboard players set @e[name=qr_matrix] GF_1 89
+execute if score mode qr_uid matches 19..21 as @e[name=qr_main,scores={qr_prg=21}] run scoreboard players set @e[name=qr_matrix] GF_1 101
+execute if score mode qr_uid matches 22..25 as @e[name=qr_main,scores={qr_prg=21}] run scoreboard players set @e[name=qr_matrix] GF_1 117
+execute if score mode qr_uid matches 26..30 as @e[name=qr_main,scores={qr_prg=21}] run scoreboard players set @e[name=qr_matrix] GF_1 137
+execute if score mode qr_uid matches 31..35 as @e[name=qr_main,scores={qr_prg=21}] run scoreboard players set @e[name=qr_matrix] GF_1 157
+execute if score mode qr_uid matches 36..40 as @e[name=qr_main,scores={qr_prg=21}] run scoreboard players set @e[name=qr_matrix] GF_1 177
 execute as @e[name=qr_main,scores={qr_prg=21}] as @e[name=qr_matrix] at @s run function QR/matrix
 execute as @e[name=qr_main,scores={qr_prg=21}] as @e[name=qr_matrix] at @s run function QR/matrix
 execute as @e[name=qr_main,scores={qr_prg=21}] as @e[name=qr_matrix] at @s run function QR/matrix

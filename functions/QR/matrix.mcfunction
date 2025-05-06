@@ -25,6 +25,12 @@ execute if score mode qr_uid matches 4..6 if score @s qr_decode = @s GF_1 run tp
 execute if score mode qr_uid matches 7..9 if score @s qr_decode = @s GF_1 run tp @s ~-53~~1
 execute if score mode qr_uid matches 10..12 if score @s qr_decode = @s GF_1 run tp @s ~-65~~1
 execute if score mode qr_uid matches 13..15 if score @s qr_decode = @s GF_1 run tp @s ~-77~~1
+execute if score mode qr_uid matches 16..18 if score @s qr_decode = @s GF_1 run tp @s ~-89~~1
+execute if score mode qr_uid matches 19..21 if score @s qr_decode = @s GF_1 run tp @s ~-101~~1
+execute if score mode qr_uid matches 22..25 if score @s qr_decode = @s GF_1 run tp @s ~-117~~1
+execute if score mode qr_uid matches 26..30 if score @s qr_decode = @s GF_1 run tp @s ~-137~~1
+execute if score mode qr_uid matches 31..35 if score @s qr_decode = @s GF_1 run tp @s ~-157~~1
+execute if score mode qr_uid matches 36..40 if score @s qr_decode = @s GF_1 run tp @s ~-177~~1
 execute if score @s qr_decode = @s GF_1 run scoreboard players add @s qr_encode_l 1
 execute if score @s qr_decode = @s GF_1 run scoreboard players set @s qr_decode 0
 execute if score @s qr_encode_l = @s GF_1 run scoreboard players set @e[name=qr_main,scores={qr_prg=19}] qr_prg 20
@@ -36,6 +42,7 @@ execute if score @s qr_encode_l = @s GF_1 run kill @e[name=qr_decode]
 execute if score @s qr_encode_l = @s GF_1 run kill @e[name=qr_split]
 execute if score @s qr_encode_l = @s GF_1 run kill @e[name=qr_split_set]
 execute if score @s qr_encode_l = @s GF_1 run kill @e[name=qr_split_sub]
+execute if score @s qr_encode_l = @s GF_1 run kill @e[name=qr_read_sub]
 execute if score @s qr_encode_l = @s GF_1 run kill @e[name=qr_matrix]
 
 #By Baby_2016
