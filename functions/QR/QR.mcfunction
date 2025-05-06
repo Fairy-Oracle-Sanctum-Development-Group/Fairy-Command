@@ -33,10 +33,10 @@ scoreboard players add @e[name=qr_main] qr_prg 0
 scoreboard players add @e[name=qr_main] qr_split 0
 execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load b ~~~
 execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~~~
-execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~~64~
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~64~~64
 execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~~~64
-execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run fill ~64~~ ~100~5~64 air
-execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run fill ~64~~64 ~100~5~100 air
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run structure load a ~64~~
+execute as @e[name=qr_main,scores={qr_prg=0}] positioned ~1~~ run tp @a ~100~~64
 execute as @e[name=qr_main,scores={qr_prg=0}] run summon minecraft:armor_stand qr_decode_place ~~~2
 execute as @e[name=qr_main,scores={qr_prg=0}] run summon minecraft:armor_stand qr_decode ~8~-0.5~
 execute as @e[name=qr_main,scores={qr_prg=0}] run scoreboard players set @e[c=1,name=qr_decode] qr_decode_uid -1
@@ -257,8 +257,8 @@ execute as @e[name=qr_main,scores={qr_prg=109}] if entity @e[name=qr_split_sub,s
 
 #
 execute as @e[name=qr_main,scores={qr_prg=109}] run tellraw @a { "rawtext": [ { "text": "剩余待计算纠错码块数: "},{ "score": {"name": "@e[name=qr_split_sub]", "objective": "qr_code" } }]}
-execute as @e[name=qr_main,scores={qr_prg=109}] as @e[name=qr_split_set] at @s run tp @s ~~~2
-execute as @e[name=qr_main,scores={qr_prg=109}] as @e[name=qr_split_sub] at @s run tp @s ~~~-2
+execute as @e[name=qr_main,scores={qr_prg=109}] as @e[name=qr_split_set] at @s run tp @s ~~~1
+execute as @e[name=qr_main,scores={qr_prg=109}] as @e[name=qr_split_sub] at @s run tp @s ~~~-1
 execute as @e[name=qr_main,scores={qr_prg=109}] as @e[name=qr_split_sub] at @s run structure save qr_split ~64~64~ ~1~~
 execute as @e[name=qr_main,scores={qr_prg=109}] run structure load qr_split ~1~~ 0_degrees none false true
 execute as @e[name=qr_main,scores={qr_prg=109}] run fill ~64~64~2 ~1~~2 minecraft:air

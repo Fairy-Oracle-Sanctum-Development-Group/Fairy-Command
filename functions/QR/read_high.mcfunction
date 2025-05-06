@@ -9,8 +9,8 @@ scoreboard players add @e[name=qr_read_sub] qr_split 0
 scoreboard players operation @e[name=qr_read_sub,scores={qr_split=0}] qr_split = @e[name=qr_read] qr_split
 execute as @e[name=qr_read_sub] at @s run tp @s ~1~~
 scoreboard players add @e[name=qr_read_sub] qr_encode 1
-execute as @e[name=qr_read,scores={qr_decode=0}] as @e[name=qr_read_sub,scores={qr_encode=8}] at @s run tp @s ~-8~~2
-execute as @e[name=qr_read,scores={qr_decode=1}] as @e[name=qr_read_sub,scores={qr_encode=8}] at @s run tp @s ~-8~~-2
+execute as @e[name=qr_read,scores={qr_decode=0}] as @e[name=qr_read_sub,scores={qr_encode=8}] at @s run tp @s ~-8~~1
+execute as @e[name=qr_read,scores={qr_decode=1}] as @e[name=qr_read_sub,scores={qr_encode=8}] at @s run tp @s ~-8~~-1
 execute as @e[name=qr_read_sub,scores={qr_encode=8}] at @s run scoreboard players add @s qr_split -1
 execute as @e[name=qr_read_sub,scores={qr_encode=8}] at @s run scoreboard players set @s qr_encode 0
 execute as @e[name=qr_read_sub,scores={qr_split=0}] as @e[name=qr_read] at @s run scoreboard players add @s qr_encode 1
@@ -35,8 +35,3 @@ execute as @e[name=qr_read,tag=!qr_read_more] at @s if block ~~~ minecraft:air [
 #execute as @e[name=qr_read,scores={qr_decode=2}] run kill @s
 
 #titleraw @a actionbar {"rawtext":[{"score":{"name":"@e[name=qr_read]","objective":"qr_encode"}},{ "text": "," },{"score":{"name":"@e[name=qr_read]","objective":"qr_decode"}}]}
-
-
-
-
-

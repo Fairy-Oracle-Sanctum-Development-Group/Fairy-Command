@@ -102,12 +102,10 @@ function QR/pad
 ###版本6以上特殊处理
 #分割数据码
 execute as @e[name=qr_main,scores={qr_prg=105}] run tellraw @a { "rawtext": [ { "text": "编码完毕\n开始分割数据码"}]}
-execute as @e[name=qr_main,scores={qr_prg=105}] run fill ~64~64~ ~1~~ minecraft:air
-execute as @e[name=qr_main,scores={qr_prg=105}] run fill ~64~128~ ~1~64~ minecraft:air
-execute as @e[name=qr_main,scores={qr_prg=105}] run fill ~64~192~ ~1~128~ minecraft:air
+execute as @e[name=qr_main,scores={qr_prg=105}] run structure load c ~1~~
 execute as @e[name=qr_main,scores={qr_prg=105}] run summon minecraft:armor_stand qr_split ~~~6
-execute as @e[name=qr_main,scores={qr_prg=105}] run summon minecraft:armor_stand qr_split_sub ~~~8
-execute as @e[name=qr_main,scores={qr_prg=105}] run summon minecraft:armor_stand qr_split_set ~~~8
+execute as @e[name=qr_main,scores={qr_prg=105}] run summon minecraft:armor_stand qr_split_sub ~~~7
+execute as @e[name=qr_main,scores={qr_prg=105}] run summon minecraft:armor_stand qr_split_set ~~~7
 execute as @e[name=qr_main,scores={qr_prg=105}] run scoreboard players operation @e[name=qr_split] qr_code = @s qr_split
 execute as @e[name=qr_main,scores={qr_prg=105}] run scoreboard players set @s qr_prg 106
 #
@@ -131,7 +129,7 @@ execute if entity @e[name=qr_main,scores={qr_prg=107}] as @e[name=qr_split] at @
 execute as @e[name=qr_main,scores={qr_prg=108}] run tp @e[name=qr_split] @e[name=qr_split_sub]
 #execute as @e[name=qr_main,scores={qr_prg=108}] run kill @e[name=qr_split]
 execute as @e[name=qr_main,scores={qr_prg=108}] run tp @e[name=qr_split_set] @e[name=qr_split_sub]
-execute as @e[name=qr_main,scores={qr_prg=108}] as @e[name=qr_split_sub] at @s run tp @s ~~~-2
+execute as @e[name=qr_main,scores={qr_prg=108}] as @e[name=qr_split_sub] at @s run tp @s ~~~-1
 execute as @e[name=qr_main,scores={qr_prg=108}] as @e[name=qr_split_sub] run scoreboard players operation @s qr_code = @e[name=qr_main] qr_split
 #execute as @e[name=qr_main,scores={qr_prg=108}] as @e[name=qr_split_sub] run scoreboard players add @s qr_code -1
 execute as @e[name=qr_main,scores={qr_prg=108}] as @e[name=qr_split_sub] at @s run structure save qr_split ~64~64~ ~1~~
